@@ -1,4 +1,4 @@
-function [ ] = smoothImg( image,kernel )
+function [ ] = smoothImg( image,kernel,sigma )
 %Smoothing image with averaging filter.
 %   1430003045 ÷”æ˚»Â
 
@@ -6,15 +6,18 @@ function [ ] = smoothImg( image,kernel )
 gray = rgb2gray(image);
 % Display the original image.
 figure(1), imshow(gray);
-%figure(1), imhist(gray);
+%figure(3), imhist(gray);
 title('Original image');
 
-% Do cross-correlation.
-new = xcorr2(gray,kernel);
+% Do smoothing
+h = fspecial('gaussian', kernel, sigma);
+mesh(h);
+imagesc(h);
+new = imfilter(gray,h);
 
 % Display the new image.
-figure(2), imshow(new);
-%figure(2), imhist(new);
+figure(4), imshow(new);
+%figure(5), imhist(new);
 title('New image');
 end
 

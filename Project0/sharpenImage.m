@@ -1,5 +1,5 @@
-function [ ] = sharpenImage( image,kernel )
-%Sharpen image using convolution.
+function [ ] = sharpenImage( image,variance )
+%Sharpen image
 %   1430003045 ÷”æ˚»Â
 
 % Transfer the image into gray.
@@ -9,8 +9,9 @@ figure(1), imshow(gray);
 %figure(1), imhist(gray);
 title('Original image');
 
-% Do cross-correlation.
-new = conv2(gray,kernel);
+% Initialize the custom filter.
+H = padarray(2,[2,2]) - fspecial('gaussian',5,variance);
+new = imfilter(gray,H);
 
 % Display the new image.
 figure(2), imshow(new);

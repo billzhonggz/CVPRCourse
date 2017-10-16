@@ -14,11 +14,8 @@ histEqal(im);
 % Run linear transformation.
 linTransformImg(im,1,2);
 
-% Set up kernel.
-kernel = ones(3);
-
 % Run smoothing.
-smoothImg(im,kernel);
+smoothImg(im,10,5);
 
 % Run sharpening.
-sharpenImage(im,kernel);
+sharpenImage(im,5);
