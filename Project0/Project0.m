@@ -12,7 +12,7 @@ histImg(im);
 histEqal(im);
 
 % Run linear transformation.
-linTransformImg(im,1,2);
+linTransformImg(im,0.5,1);
 
 % Run smoothing.
 smoothImg(im,10,5);

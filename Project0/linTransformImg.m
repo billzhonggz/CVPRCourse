@@ -12,13 +12,14 @@ title('Original image');
 
 % Do linear transformation.
 new = zeros(size(gray));
+gray = im2double(gray);
 % For all pixels, applying the linear transformation function.
 for i = 1:size(gray,1)
     for j = 1:size(gray,2)
         new(i,j) = k + m * gray(i,j);
     end
 end
-
+new = im2uint8(new);
 % Display the new image.
 figure(2),imshow(new);
 % figure(2),imhist(new);
