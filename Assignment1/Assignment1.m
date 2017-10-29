@@ -17,3 +17,7 @@ title('Sobel / Canny edeges by MATLAB function');
 
 % Square Magnitude.
 b = squMag(im);
+
+% Direction Graduient
+fiG = dirGrad(im);
+
