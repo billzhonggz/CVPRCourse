@@ -14,3 +14,6 @@ cannyEdges = edge(im,'Canny');
 figure(2);
 imshowpair(sobelEdges,cannyEdges,'montage');
 title('Sobel / Canny edeges by MATLAB function');
+
+% Square Magnitude.
+b = squMag(im);
