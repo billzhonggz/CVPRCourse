@@ -15,9 +15,11 @@ figure(2);
 imshowpair(sobelEdges,cannyEdges,'montage');
 title('Sobel / Canny edeges by MATLAB function');
 
-% Square Magnitude.
+% Square magnitude.
 b = squMag(im);
 
-% Direction Graduient
+% Direction of graduient.
 fiG = dirGrad(im);
 
+% Edge direction.
+fiE = edgDirct(im);
