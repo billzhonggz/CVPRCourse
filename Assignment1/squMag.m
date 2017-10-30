@@ -11,8 +11,8 @@ gi = conv2(im,Di,'same');
 gj = conv2(im,Dj,'same');
 % Compute the squre magnitude.
 gausFilter = fspecial('gaussian',[3,3],1.6);
-bi = conv2(gi,gausFilter,'same');
-bj = conv2(gj,gausFilter','same');
+bi = conv2(power(gi,2),gausFilter,'same');
+bj = conv2(power(gj,2),gausFilter','same');
 % Export the squre magnitude.
 b = bi + bj;
 end
