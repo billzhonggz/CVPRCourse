@@ -46,9 +46,9 @@ matcher_B = [y_B,x_B,ones(npoints,1)]';
 
 % Inverse warp.
 % Set up the size of new image.
-[newH,newW,newX,newY,xB,yB] = getNewSize(hh,height_wrap,width_wrap,height_unwrap,width_unwrap);
+[newH,newW,newX,newY,xB,yB] = getNewSize(hh,height1,width1,height2,width2);
 
-[X,Y] = mshgrid(1:width_wrap,1:height_wrap);
+[X,Y] = meshgrid(1:width1,1:height1);
 [XX,YY] = meshgrid(newX:newX+newW-1,newY:newY+newW-1);
 newImg = ones(3,newH*newW);
 newImg(1,:) = reshape(XX,1,newH*newW);
