@@ -29,8 +29,8 @@ function [output_image] = image_stitching(input_A, input_B)
 % -------------------------------------------------------------------------
 
 % READ IMAGE, GET SIZE INFORMATION
-image_A = imread(input_A);
-image_B = imread(input_B);
+image_A = imread('1.jpg');
+image_B = imread('2.jpg');
 [height_wrap, width_wrap,~] = size(image_A);
 [height_unwrap, width_unwrap,~] = size(image_B);
 
